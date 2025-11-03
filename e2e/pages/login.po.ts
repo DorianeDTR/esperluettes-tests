@@ -6,7 +6,7 @@ import { BasePo } from "./base.po";
 export class LoginPo extends BasePo {
     private auth = new Auth();
     get pageLocator(): Locator {
-        return this.page.locator('form[action=""https://esperluettes.hemit.fr/login"]');
+        return this.page.locator('form[action="https://esperluettes.hemit.fr/login"]');
     }
     get loginInput(): Locator {
         return this.pageLocator.locator('input[name="email"]');
@@ -25,7 +25,7 @@ export class LoginPo extends BasePo {
         super(page);
     }
 
-    async goto(): Promise<void> {
+    async goTo(): Promise<void> {
         await this.page.goto('/login');
     }
 
