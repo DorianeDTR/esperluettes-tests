@@ -13,7 +13,7 @@ Then ('Login page should be displayed', async ({ loginPo }: AllFixtures) => {
 });
 
 When('I fill the login form with valide data', async ({ loginPo }: AllFixtures) => {
-    await loginPo.logAs('doriane.cc.dutertre@gmail.com', 'Jardindes&$!');
+    await loginPo.logAsUser('kiouhay');
 });
 Then ('I am redirected to the home page from the login page', async ({ dashboardPo }: AllFixtures) => {
     await dashboardPo.shouldBeDisplayed();
