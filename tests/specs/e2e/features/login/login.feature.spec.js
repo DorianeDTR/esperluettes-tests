@@ -1,5 +1,5 @@
 // Generated from: e2e\features\login\login.feature
-import { fixtures as test } from "../../../../../e2e/steps/login.ts";
+import { fixtures as test } from "../../../../../e2e/steps/header.ts";
 
 test.describe('Login Esperluette Feature', () => {
 

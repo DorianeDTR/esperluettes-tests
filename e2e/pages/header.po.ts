@@ -3,18 +3,23 @@ import { BasePo } from "./base.po";
 
 export class HeaderPo extends BasePo {
     get pageLocator(): Locator {
-        return this.page.getByTestId('home-page');
+        return this.page.getByRole('navigation');
+    }
+    get libraryBtn(): Locator {
+        return this.page.getByRole('link', { name: ' Bibliothèque ' });
+    }
+    get newsBtn(): Locator {
+        return this.page.getByRole('link', { name: 'Actus' });
     }
 
     constructor(page: Page) {
         super(page);
     }
 
-    async goTo(): Promise<void> {
-        await this.page.goto('/');
+    async goToLibrary(): Promise<void> {
+        await this.libraryBtn.click();
     }
-
-    async shouldBeDisplayed(): Promise<void> {
-        await expect(this.pageLocator).toBeVisible();
+    async goToNews(): Promise<void> {
+        await this.newsBtn.click();
     }
 }
